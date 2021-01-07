@@ -13,14 +13,11 @@ deploy:
   keep_history: false
   local_dir: dist
   target_branch: gh-pages
-  name: kezhenxu94
-  email: kezhenxu94@apache.org
   on:
     branch: master
 
-notifications:
-  email:
-    recipients:
-      - kezhenxu94@apache.org
-    on_success: change
-    on_failure: always
+  dx-scan:
+  stage: build
+  image: dxheroes/dx-scanner:latest
+  script:
+    - dx-scanner run --ci
