@@ -16,7 +16,7 @@ deploy:
   on:
     branch: master
 
-  dx-scan:
+dx-scan:
   stage: build
   image: dxheroes/dx-scanner:latest
   script:
